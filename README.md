@@ -35,12 +35,11 @@ Support desk. Decision records: whoever signed them.
 
 Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
 
-## Added: #4471 has three problems
+## Added: #4471 needs two tickets
 
 - The page: `src/routes/kb/incidents/4471/problems/+page.svx` (signed: Kat, desk ref DR-R882-MQYK),
   with its logic in `src/lib/kb/problems.ts` and `src/lib/kb/ProblemTable.svelte`.
 - The page as the desk sees it: `rendered/kb/incidents/4471/problems.html`
   (built with `npm install && npm run build`; the whole kb renders to `rendered/`).
-- One ticket per problem: [#10 parser, 379 reports](https://github.com/connkat/mega-s01e03-what-it-shows/issues/10) ·
-  [#11 booking-v3 hint, 33](https://github.com/connkat/mega-s01e03-what-it-shows/issues/11) ·
-  [#12 one-day move, 5](https://github.com/connkat/mega-s01e03-what-it-shows/issues/12). The 5 one-day reports are also counted under the parser, as on the desk's own table; 412 reports in all.
+- Tickets: [#13 parser, 379 reports](https://github.com/connkat/mega-s01e03-what-it-shows/issues/13) ·
+  [#14 booking-v3 hint, 33](https://github.com/connkat/mega-s01e03-what-it-shows/issues/14). The 5 one-day-move reports are counted and noted in #13, as on the desk's own table; 412 reports in all.

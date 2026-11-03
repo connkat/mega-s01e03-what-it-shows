@@ -1,6 +1,6 @@
 ---
 layout: runbook
-title: '#4471 · three problems, not one'
+title: '#4471 · two tickets, not one'
 owner: Kat
 status: open
 reviewed: 2026-11-02
@@ -17,12 +17,12 @@ signature: Kat
 subject lines or intake tags, and it holds three problems. Fixing the parser fixes one of them.
 
 <Callout kind="warn">
-#4471 is three problems. Each has its own ticket now. Do not close them with the parser fix.
+#4471 needs two tickets: the parser and the booking-v3 hint. The 5 one-day reports stay in the parser ticket, noted, as the desk counts them.
 </Callout>
 
 ## What the reports show
 
-<ProblemTable ticket={4471} issues={{ parser: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/10', hint: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/11', 'one-day': 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/12' }} />
+<ProblemTable ticket={4471} issues={{ parser: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/13', hint: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/14', 'one-day': 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/13' }} />
 
 ## The three problems
 
@@ -40,7 +40,7 @@ does not touch them; the fix is the hint.
 "Tuesday 12 May" on the invite, "Monday 11 May" in the calendar; a client in Lisbon got Tuesday
 and a client in Toronto got Monday. Day and month did not swap. The desk read these as a
 one-day move and filed them under the parser by tenant. They are a different bug, and the
-parser fix leaves them where they are.
+parser fix leaves them where they are. They stay in the parser ticket, noted, so they are checked again after that fix ships.
 
 ## Why one ticket hid three
 
@@ -53,6 +53,6 @@ parser fix leaves them where they are.
 ## For the desk
 
 - Count a big ticket by what its reports show, then split it.
-- Keep #4471 for the parser. Move the `hint` and `one-day` reports to their own tickets.
+- Keep #4471 for the parser, with the 5 one-day reports noted in it. Move the `hint` reports to their own ticket.
 
 <RenderStamp {signature} />
