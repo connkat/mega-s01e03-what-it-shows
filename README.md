@@ -41,6 +41,6 @@ Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
   with its logic in `src/lib/kb/problems.ts` and `src/lib/kb/ProblemTable.svelte`.
 - The page as the desk sees it: `rendered/kb/incidents/4471/problems.html`
   (built with `npm install && npm run build`; the whole kb renders to `rendered/`).
-- One ticket per problem: [#1 parser, 379 reports](https://github.com/connkat/mega-s01e03-what-it-shows/issues/1) ·
-  [#2 booking-v3 hint, 33](https://github.com/connkat/mega-s01e03-what-it-shows/issues/2) ·
-  [#3 one-day move, 5](https://github.com/connkat/mega-s01e03-what-it-shows/issues/3). The 5 one-day reports are also counted under the parser, as on the desk's own table; 412 reports in all.
+- One ticket per problem: [#4 parser, 379 reports](https://github.com/connkat/mega-s01e03-what-it-shows/issues/4) ·
+  [#5 booking-v3 hint, 33](https://github.com/connkat/mega-s01e03-what-it-shows/issues/5) ·
+  [#6 one-day move, 5](https://github.com/connkat/mega-s01e03-what-it-shows/issues/6). The 5 one-day reports are also counted under the parser, as on the desk's own table; 412 reports in all.
