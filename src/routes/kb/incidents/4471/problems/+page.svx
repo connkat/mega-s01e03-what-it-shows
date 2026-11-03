@@ -22,7 +22,7 @@ subject lines or intake tags, and it holds three problems. Fixing the parser fix
 
 ## What the reports show
 
-<ProblemTable ticket={4471} issues={{ parser: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/4', hint: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/5', 'one-day': 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/6' }} />
+<ProblemTable ticket={4471} issues={{ parser: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/7', hint: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/8', 'one-day': 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/9' }} />
 
 ## The three problems
 
