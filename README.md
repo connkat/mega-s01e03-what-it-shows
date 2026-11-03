@@ -41,5 +41,5 @@ Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
   with its logic in `src/lib/kb/problems.ts` and `src/lib/kb/ProblemTable.svelte`.
 - The page as the desk sees it: `rendered/kb/incidents/4471/problems.html`
   (built with `npm install && npm run build`; the whole kb renders to `rendered/`).
-- Tickets: [#13 parser, 379 reports](https://github.com/connkat/mega-s01e03-what-it-shows/issues/13) ·
-  [#14 booking-v3 hint, 33](https://github.com/connkat/mega-s01e03-what-it-shows/issues/14). The 5 one-day-move reports are counted and noted in #13, as on the desk's own table; 412 reports in all.
+- Tickets: [#17 parser, 379 reports](https://github.com/connkat/mega-s01e03-what-it-shows/issues/17) ·
+  [#18 booking-v3 hint, 33](https://github.com/connkat/mega-s01e03-what-it-shows/issues/18). The 5 one-day-move reports are counted and noted in #17, as on the desk's own table; 412 reports in all. Desk update: #4471 closed 05 Oct — parser fixed (`fix(dates): parse dd/mm for eu locales`), hint won't fix (booking-v3 form retired).

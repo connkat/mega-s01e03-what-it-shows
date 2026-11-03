@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · two tickets, not one'
 owner: Kat
-status: open
+status: closed
 reviewed: 2026-11-02
 signature: Kat
 ---
@@ -13,8 +13,13 @@ signature: Kat
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 </script>
 
-[#4471](/kb/incidents/4471) is marked known: one issue, one fix queued. Read the reports, not their
+[#4471](/kb/incidents/4471) was marked known: one issue, one fix queued. Read the reports, not their
 subject lines or intake tags, and it holds three problems. Fixing the parser fixes one of them.
+
+## Desk update: #4471 closed 05 Oct
+
+- `parser`: **fixed** — `fix(dates): parse dd/mm for eu locales`. Ticket [#17](https://github.com/connkat/mega-s01e03-what-it-shows/issues/17) closes as completed.
+- `hint`: **won't fix** — booking-v3 form retired. Ticket [#18](https://github.com/connkat/mega-s01e03-what-it-shows/issues/18) closes as not planned.
 
 <Callout kind="warn">
 #4471 needs two tickets: the parser and the booking-v3 hint. The 5 one-day reports stay in the parser ticket, noted, as the desk counts them.
@@ -22,25 +27,24 @@ subject lines or intake tags, and it holds three problems. Fixing the parser fix
 
 ## What the reports show
 
-<ProblemTable ticket={4471} issues={{ parser: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/13', hint: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/14', 'one-day': 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/13' }} />
+<ProblemTable ticket={4471} issues={{ parser: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/17', hint: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/18', 'one-day': 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/17' }} />
 
 ## The three problems
 
 **`parser`: day and month swap.** The shared parser reads every date month first. Our tenants
-write the day first, so 7 April becomes 4 July. This is what #4471 says it is, and the queued
-fix is for this one.
+write the day first, so 7 April becomes 4 July. This is what #4471 says it is. Fixed: `fix(dates): parse dd/mm for eu locales`.
 
 **`hint`: the booking-v3 form asks for the wrong order.** booking-v3 prints `MM/DD/YYYY` under
 its date field. At day-first tenants people type what the hint tells them, month first, and
 the form reads it day first. The date swaps in the same way, so it looks like the parser. It is
 not: these reports come only through the form, only at tenants on booking-v3. The parser fix
-does not touch them; the fix is the hint.
+does not touch them. Won't fix: the booking-v3 form is retired.
 
 **`one-day`: the date moves by one day.** A few reports say the day moved, not the month:
 "Tuesday 12 May" on the invite, "Monday 11 May" in the calendar; a client in Lisbon got Tuesday
 and a client in Toronto got Monday. Day and month did not swap. The desk read these as a
 one-day move and filed them under the parser by tenant. They are a different bug, and the
-parser fix leaves them where they are. They stay in the parser ticket, noted, so they are checked again after that fix ships.
+parser fix leaves them where they are. They stay in the parser ticket, noted, so they are checked again now that the parser fix has shipped.
 
 ## Why one ticket hid three
 
@@ -53,6 +57,6 @@ parser fix leaves them where they are. They stay in the parser ticket, noted, so
 ## For the desk
 
 - Count a big ticket by what its reports show, then split it.
-- Keep #4471 for the parser, with the 5 one-day reports noted in it. Move the `hint` reports to their own ticket.
+- #4471 is closed (05 Oct): the parser is fixed in #17, with the 5 one-day reports noted in it; the `hint` reports are in #18, won't fix, because booking-v3 is retired.
 
 <RenderStamp {signature} />
