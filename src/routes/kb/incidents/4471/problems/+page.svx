@@ -1,0 +1,58 @@
+---
+layout: runbook
+title: '#4471 · three problems, not one'
+owner: Kat
+status: open
+reviewed: 2026-11-02
+signature: Kat
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+[#4471](/kb/incidents/4471) is marked known: one issue, one fix queued. Read the reports, not their
+subject lines or intake tags, and it holds three problems. Fixing the parser fixes one of them.
+
+<Callout kind="warn">
+#4471 is three problems. Each has its own ticket now. Do not close them with the parser fix.
+</Callout>
+
+## What the reports show
+
+<ProblemTable ticket={4471} issues={{ parser: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/1', hint: 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/2', 'one-day': 'https://github.com/connkat/mega-s01e03-what-it-shows/issues/3' }} />
+
+## The three problems
+
+**`parser`: day and month swap.** The shared parser reads every date month first. Our tenants
+write the day first, so 7 April becomes 4 July. This is what #4471 says it is, and the queued
+fix is for this one.
+
+**`hint`: the booking-v3 form asks for the wrong order.** booking-v3 prints `MM/DD/YYYY` under
+its date field. At day-first tenants people type what the hint tells them, month first, and
+the form reads it day first. The date swaps in the same way, so it looks like the parser. It is
+not: these reports come only through the form, only at tenants on booking-v3. The parser fix
+does not touch them; the fix is the hint.
+
+**`one-day`: the date moves by one day.** A few reports say the day moved, not the month:
+"Tuesday 12 May" on the invite, "Monday 11 May" in the calendar; a client in Lisbon got Tuesday
+and a client in Toronto got Monday. Day and month did not swap. The desk read these as a
+one-day move and filed them under the parser by tenant. They are a different bug, and the
+parser fix leaves them where they are.
+
+## Why one ticket hid three
+
+- Merging on subject ([decision 0001](/kb/decisions/0001-dedupe-by-subject)) put every
+  "wrong date" report in one place. Subjects say how a report feels, not what broke.
+- Intake tags do not tell the problems apart. Intake tags a report `hint` when the reporter's
+  browser runs a US locale; the problem depends on the tenant and the way the report came in.
+- The export pages overlap, so some reports come twice. Count by id.
+
+## For the desk
+
+- Count a big ticket by what its reports show, then split it.
+- Keep #4471 for the parser. Move the `hint` and `one-day` reports to their own tickets.
+
+<RenderStamp {signature} />
