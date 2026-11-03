@@ -4,7 +4,7 @@ title: '#4471 · two tickets, not one'
 owner: Kat
 status: closed
 reviewed: 2026-11-02
-signature: Kat
+signature: 'v1.eyJzdWIiOiI1ODY5IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTM2Njg1MTAsImV4cCI6MTc5Mzc1NDkxMH0.9Lli4QOB4L9axsMQKV2tPimaOkPQOe8nWiCY4YZxBi4'
 ---
 
 <script>

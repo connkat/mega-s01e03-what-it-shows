@@ -37,7 +37,7 @@ Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
 
 ## Added: #4471 needs two tickets
 
-- The page: `src/routes/kb/incidents/4471/problems/+page.svx` (signed: Kat, desk ref DR-R882-MQYK),
+- The page: `src/routes/kb/incidents/4471/problems/+page.svx` (signed with the course ticket, desk ref DR-M6K2-F4BX),
   with its logic in `src/lib/kb/problems.ts` and `src/lib/kb/ProblemTable.svelte`.
 - The page as the desk sees it: `rendered/kb/incidents/4471/problems.html`
   (built with `npm install && npm run build`; the whole kb renders to `rendered/`).
