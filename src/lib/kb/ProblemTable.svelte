@@ -30,7 +30,7 @@
     {#each result.groups as g (g.problem)}
       <tr>
         <td><code>{g.problem}</code></td>
-        <td><strong>{g.reports.length}</strong></td>
+        <td><strong>{g.reports.length}</strong>{#if g.problem === 'one-day'}<sup>*</sup>{/if}</td>
         <td>{PROBLEMS[g.problem]}</td>
         <td>{g.tenants.length}</td>
         <td>{g.firstSeen} → {g.lastSeen}</td>
@@ -41,7 +41,9 @@
   </tbody>
 </table>
 
+<p class="note"><sup>*</sup> Filed under <code>parser</code> by tenant, and counted there too, as on the desk's own table; read as a one-day move.</p>
+
 <style>
   .sum { font-size: 1.1rem; }
-  .tags { color: var(--muted); font-size: 0.85em; }
+  .tags, .note { color: var(--muted); font-size: 0.85em; }
 </style>

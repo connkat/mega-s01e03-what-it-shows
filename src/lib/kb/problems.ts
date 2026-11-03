@@ -1,6 +1,7 @@
 // What #4471 holds, read from what each report shows, not from what intake tagged it.
-// causes.ts places a report by its tenant and channel. A report the desk read as a one-day move
-// (desk-notes.json) shows a different problem: the date moves by a day, day and month are not swapped.
+// causes.ts places a report by its tenant and channel, and the desk counts it there.
+// A report the desk read as a one-day move (desk-notes.json) shows a different problem, the date
+// moves by a day; like the desk's own table, it stays counted where it is filed and is also listed here.
 import { causeOf, uniqueById, type Report, type Tenant } from '#lib/kb/causes';
 
 export type Problem = 'parser' | 'hint' | 'one-day' | 'unplaced';
@@ -27,9 +28,10 @@ export function groupByProblem(
 ): { rows: number; unique: number; groups: ProblemGroup[] } {
   const merged = uniqueById(rows).filter((r) => r.mergedInto === ticket);
   const by = new Map<Problem, Report[]>();
+  const add = (p: Problem, r: Report) => by.set(p, [...(by.get(p) ?? []), r]);
   for (const r of merged) {
-    const p = problemOf(r, tenantOf(r), oneDayMove);
-    by.set(p, [...(by.get(p) ?? []), r]);
+    add(causeOf(r, tenantOf(r)) ?? 'unplaced', r);
+    if (oneDayMove.includes(r.id)) add('one-day', r);
   }
   const groups = [...by.entries()]
     .map(([problem, rs]) => {
